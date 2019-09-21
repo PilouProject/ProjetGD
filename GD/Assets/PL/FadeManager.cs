@@ -66,6 +66,6 @@ public class FadeManager : MonoBehaviour
 
         if (_transition > 1 || _transition < 0)
             _isInTransition = false;
-        //if < 0 reset variable
+        //if < 0 reset variable call function Random check for object bouffe
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - Animal
   - House
+  - Food
   layers:
   - Default
   - TransparentFX

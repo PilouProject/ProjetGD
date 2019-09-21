@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pickup
   - Wall
+  - Animal
+  - House
   layers:
   - Default
   - TransparentFX

@@ -14,8 +14,10 @@ public class dayNight : MonoBehaviour
 
     public Slider sleepSlider;
     public Light sun;
-
-
+	public Canvas startMenu;
+	public Canvas gameOverCanvas;
+	public Canvas HUDCanvas;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -27,22 +29,26 @@ public class dayNight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= time + (1 / speed))
+		if (!startMenu.gameObject.activeSelf && !gameOverCanvas.gameObject.activeSelf)
         {
-            sun.transform.Rotate(new Vector3(1, 0, 0));
-            time = Time.time;
-            x++;
-            if (x == 360)
-            {
-                x = 0;
-                nbDay++;
-                decreaseSleep();
-                if (nbDay == 3)
-                {
-                    //GAME OVER
-                }
-            }
-        }
+			if (Time.time >= time + (1 / speed))
+			{
+				sun.transform.Rotate(new Vector3(1, 0, 0));
+				time = Time.time;
+				x++;
+				if (x == 360)
+				{
+					x = 0;
+					nbDay++;
+					decreaseSleep();
+					if (nbDay == 3)
+					{
+						gameOverCanvas.gameObject.SetActive(true);
+						HUDCanvas.gameObject.SetActive(false);
+					}
+				}
+			}
+		}
     }
 
     void decreaseSleep()

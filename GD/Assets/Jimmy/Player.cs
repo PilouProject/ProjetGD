@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float maxVelocity = 4.0f;
     public int tireingLevel = 0;
     public int food = 0;
-    public Button startButton;
+    public Canvas startMenu;
 
     private Vector3 offset;
 
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!startButton.gameObject.activeSelf)
+        if (!startMenu.gameObject.activeSelf)
         {
             if (Input.GetKey(KeyCode.RightArrow))
                 playerRb.velocity = playerRb.velocity + new Vector3(1, 0, 0) * maxVelocity;

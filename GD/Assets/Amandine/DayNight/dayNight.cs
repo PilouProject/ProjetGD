@@ -41,7 +41,7 @@ public class dayNight : MonoBehaviour
 					x = 0;
 					nbDay++;
 					decreaseSleep();
-					if (nbDay == 3)
+					if (nbDay == sleepSlider.maxValue)
 					{
 						gameOverCanvas.gameObject.SetActive(true);
 						HUDCanvas.gameObject.SetActive(false);
@@ -53,6 +53,6 @@ public class dayNight : MonoBehaviour
 
     void decreaseSleep()
     {
-        sleepSlider.value += -1;
+        sleepSlider.value -= 1;
     }
 }

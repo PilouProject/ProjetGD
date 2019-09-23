@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class randomPosition : MonoBehaviour
 {
-	
-	public float x, z;
+	public int repartitionSize;
+	float x, z;
 	float y = 0.5f;
 	Vector3 pos;
 	
     void Start()
     {
-        x = Random.Range(-10, 10);
-		z = Random.Range(-10, 10);
+        x = Random.Range(-repartitionSize, repartitionSize);
+		z = Random.Range(-repartitionSize, repartitionSize);
 		pos = new Vector3(x, y, z);
 		transform.position = pos;
     }
@@ -21,8 +21,8 @@ public class randomPosition : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Wall"))
 		{
-			x = Random.Range(-10, 10);
-			z = Random.Range(-10, 10);
+			x = Random.Range(-repartitionSize, repartitionSize);
+			z = Random.Range(-repartitionSize, repartitionSize);
 			pos = new Vector3(x, y, z);
 			transform.position = pos;
 		}

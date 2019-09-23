@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
     public int tireingLevel = 0;
     public int food = 0;
     public Canvas startMenu;
-
+	public Slider foodSlider;
+	
     private Vector3 offset;
 
     private float sqrMaxVelocity;
@@ -59,8 +60,9 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
+			
             other.gameObject.SetActive(false);
-
+			foodSlider.value++;
         }
     }
 }

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     Rigidbody playerRb = null;
-    public Camera camera;
+    public Camera _camera;
     public float maxVelocity = 4.0f;
     public int tireingLevel = 0;
     public int food = 0;
     public Canvas startMenu;
-	public Slider foodSlider;
-	
+	public Slider _foodSlider;
+	public bool _triggerHouse;
     private Vector3 offset;
 
     private float sqrMaxVelocity;
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         //On ne fait pas bouger le player tant que l'ecran titre est affiche
 
         playerRb = GetComponent<Rigidbody>();
-        offset = camera.transform.position - transform.position;
+        offset = _camera.transform.position - transform.position;
         SetMaxVelocity(maxVelocity);
     }
 
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
                 playerRb.velocity = playerRb.velocity + new Vector3(0, 0, 1) * maxVelocity;
             if (Input.GetKey(KeyCode.DownArrow))
                 playerRb.velocity = playerRb.velocity + new Vector3(0, 0, -1) * maxVelocity;
-            camera.transform.position = transform.position + offset;
+            GetComponent<Camera>().transform.position = transform.position + offset;
         }
 
         if (playerRb.velocity.sqrMagnitude > sqrMaxVelocity)
@@ -58,11 +58,14 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pickup"))
+        if (_foodSlider.maxValue > _foodSlider.value && other.gameObject.CompareTag("Pickup"))
         {
 			
             other.gameObject.SetActive(false);
-			foodSlider.value++;
+			_foodSlider.value++;
         }
+		
+		if (other.gameObject.tag == "House")
+			_triggerHouse = true;
     }
 }

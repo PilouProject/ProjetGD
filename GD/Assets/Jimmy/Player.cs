@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
                 playerRb.velocity = playerRb.velocity + new Vector3(0, 0, 1) * maxVelocity;
             if (Input.GetKey(KeyCode.DownArrow))
                 playerRb.velocity = playerRb.velocity + new Vector3(0, 0, -1) * maxVelocity;
-            GetComponent<Camera>().transform.position = transform.position + offset;
+            _camera.transform.position = transform.position + offset;
         }
 
         if (playerRb.velocity.sqrMagnitude > sqrMaxVelocity)

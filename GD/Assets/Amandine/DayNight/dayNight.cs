@@ -15,6 +15,7 @@ public class dayNight : MonoBehaviour
     public Slider sleepSlider;
     public Slider foodSlider;
     public Light sun;
+    public Light moon;
 	public Canvas startMenu;
 	public Canvas gameOverCanvas;
 	public Canvas HUDCanvas;
@@ -35,9 +36,10 @@ public class dayNight : MonoBehaviour
 			if (Time.time >= time + (1 / speed * 0.2f))
 			{
 				sun.transform.Rotate(new Vector3(0.2f, 0, 0));
-				time = Time.time;
+                moon.transform.Rotate(new Vector3(0.2f, 0, 0));
+                time = Time.time;
 				x += 0.2f;
-				if (x == 360)
+				if (x >= 360)
 				{
 					x = 0;
 					nbDay++;
@@ -54,12 +56,13 @@ public class dayNight : MonoBehaviour
 
     void decreaseSleep()
     {
-        sleepSlider.value -= 1;
+        sleepSlider.value = sleepSlider.value - 1;
     }
 
     public void resetLvl()
     {
         sun.transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.Euler(10f, -95f, 0f));
+        moon.transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.Euler(190f, -95f, 0f));
         sleepSlider.value = sleepSlider.maxValue;
         foodSlider.value = 0;
         nbDay = 0;

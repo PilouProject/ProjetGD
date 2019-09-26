@@ -12,7 +12,8 @@ public class FadeManager : MonoBehaviour
     public float _duration;
     public float _durationEnd;
     private bool _launchTimer;
-    public GameObject _house;
+    public GameObject _player;
+    public GameObject _light;
     private bool _trigger;
 
     // créer fonction setup variables
@@ -35,9 +36,9 @@ public class FadeManager : MonoBehaviour
     {
         //if pas de fatigue call fade(true, 1.25f) et ecran de mort
 
-        if (_house.GetComponent<ChangeLevel>()._trigger == true)
+        if (_player.GetComponent<Player>()._triggerHouse == true)
         {
-            _house.GetComponent<ChangeLevel>()._trigger = false;
+            _player.GetComponent<Player>()._triggerHouse = false;
             // add can't move
             _launchTimer = true;
             Fade(true, 1.25f);
@@ -52,6 +53,7 @@ public class FadeManager : MonoBehaviour
             //Set variable fuction
             _launchTimer = false;
             _durationEnd = 2.5f;
+            _light.GetComponent<dayNight>().resetLvl();
         }
 
         if (!_isInTransition)
@@ -66,6 +68,6 @@ public class FadeManager : MonoBehaviour
 
         if (_transition > 1 || _transition < 0)
             _isInTransition = false;
-        //if < 0 reset variable
+        //if < 0 reset variable call function Random check for object bouffe
     }
 }

@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (_foodSlider.maxValue > _foodSlider.value && other.gameObject.CompareTag("Pickup"))
+        if (_foodSlider.maxValue > _foodSlider.value && other.gameObject.CompareTag("Food"))
         {
             other.gameObject.SetActive(false);
 			_foodSlider.value++;
@@ -66,5 +66,6 @@ public class Player : MonoBehaviour
 		
 		if (_foodSlider.value >= _foodSlider.maxValue  && other.gameObject.tag == "House")
 			_triggerHouse = true;
+
     }
 }

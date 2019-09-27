@@ -19,7 +19,7 @@ public class randomPosition : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.CompareTag("Wall"))
+		if (other.gameObject.CompareTag("House") || other.gameObject.CompareTag("Tree") || other.gameObject.CompareTag("Player"))
 		{
 			x = Random.Range(-repartitionSize, repartitionSize);
 			z = Random.Range(-repartitionSize, repartitionSize);

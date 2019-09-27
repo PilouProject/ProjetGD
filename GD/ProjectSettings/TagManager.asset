@@ -9,6 +9,7 @@ TagManager:
   - Animal
   - House
   - Food
+  - Tree
   layers:
   - Default
   - TransparentFX

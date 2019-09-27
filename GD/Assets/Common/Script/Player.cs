@@ -60,12 +60,11 @@ public class Player : MonoBehaviour
     {
         if (_foodSlider.maxValue > _foodSlider.value && other.gameObject.CompareTag("Pickup"))
         {
-			
             other.gameObject.SetActive(false);
 			_foodSlider.value++;
         }
 		
-		if (other.gameObject.tag == "House")
+		if (_foodSlider.value >= _foodSlider.maxValue  && other.gameObject.tag == "House")
 			_triggerHouse = true;
     }
 }

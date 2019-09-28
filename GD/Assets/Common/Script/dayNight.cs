@@ -18,6 +18,7 @@ public class dayNight : MonoBehaviour
     public Light moon;
 	public Canvas startMenu;
 	public Canvas gameOverCanvas;
+	public Canvas pauseMenu;
 	public Canvas HUDCanvas;
 	
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class dayNight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (!startMenu.gameObject.activeSelf && !gameOverCanvas.gameObject.activeSelf)
+		if (!startMenu.gameObject.activeSelf && !gameOverCanvas.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf)
         {
 			if (Time.time >= time + (1 / speed * 0.2f))
 			{

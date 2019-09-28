@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1653932486827510343}
   - component: {fileID: 1653932486827510344}
   - component: {fileID: 114449297192025740}
-  - component: {fileID: 114145833295003036}
   m_Layer: 0
   m_Name: Food
   m_TagString: Pickup
@@ -119,15 +118,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repartitionSize: 10
---- !u!114 &114145833295003036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653932486827510345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fddb6f0c20744ff45ac33f417ac1329c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

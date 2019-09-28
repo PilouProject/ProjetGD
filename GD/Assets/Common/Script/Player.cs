@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
     public int tireingLevel = 0;
     public int food = 0;
     public Canvas startMenu;
+	public Canvas pauseMenu;
 	public Slider _foodSlider;
 	public bool _triggerHouse;
     private Vector3 offset;
-
     private float sqrMaxVelocity;
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!startMenu.gameObject.activeSelf)
+        if (!startMenu.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf)
         {
             if (Input.GetKey(KeyCode.RightArrow))
                 playerRb.velocity = playerRb.velocity + new Vector3(1, 0, 0) * maxVelocity;
@@ -49,6 +49,10 @@ public class Player : MonoBehaviour
             _camera.transform.position = transform.position + offset;
         }
 
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+				pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
+		}
         if (playerRb.velocity.sqrMagnitude > sqrMaxVelocity)
         {
             playerRb.velocity = playerRb.velocity.normalized * maxVelocity;

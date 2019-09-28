@@ -833,7 +833,7 @@ RectTransform:
   m_Children:
   - {fileID: 376702180}
   m_Father: {fileID: 649587836}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2356,7 +2356,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 971700228}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &586835345
 PrefabInstance:
@@ -2632,13 +2632,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 2125755349}
   - {fileID: 819865606}
   - {fileID: 846548895}
   - {fileID: 168840026}
   - {fileID: 866786745}
   m_Father: {fileID: 971700228}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2902,6 +2901,7 @@ MonoBehaviour:
   food: 50
   startMenu: {fileID: 778522242}
   pauseMenu: {fileID: 649587839}
+  gameOverMenu: {fileID: 878141674}
   _foodSlider: {fileID: 236803711}
   _triggerHouse: 0
 --- !u!54 &713893089
@@ -3405,7 +3405,7 @@ RectTransform:
   m_Children:
   - {fileID: 787882209}
   m_Father: {fileID: 649587836}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3602,7 +3602,7 @@ RectTransform:
   m_Children:
   - {fileID: 858402441}
   m_Father: {fileID: 649587836}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3874,7 +3874,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 649587836}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -4328,8 +4328,9 @@ Transform:
   - {fileID: 125140995}
   - {fileID: 878141675}
   - {fileID: 778522243}
-  - {fileID: 586622608}
   - {fileID: 649587836}
+  - {fileID: 2125755349}
+  - {fileID: 586622608}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8024,7 +8025,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1837267512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2125755348}
+        m_MethodName: doRestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1837267512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9419,6 +9431,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodContainer: {fileID: 949742976}
   player: {fileID: 713893083}
+  gameOverMenu: {fileID: 878141674}
+  pauseMenu: {fileID: 649587839}
   repartitionSize: 15
 --- !u!4 &2125755349
 Transform:
@@ -9428,9 +9442,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125755347}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -348.8722, y: -194.78342, z: -0.6109736}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 649587836}
-  m_RootOrder: 0
+  m_Father: {fileID: 971700228}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

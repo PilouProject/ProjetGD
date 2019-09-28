@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public int food = 0;
     public Canvas startMenu;
 	public Canvas pauseMenu;
+	public Canvas gameOverMenu;
 	public Slider _foodSlider;
 	public bool _triggerHouse;
     private Vector3 offset;
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!startMenu.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf)
+        if (!startMenu.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf && !gameOverMenu.gameObject.activeSelf)
         {
             if (Input.GetKey(KeyCode.RightArrow))
                 playerRb.velocity = playerRb.velocity + new Vector3(1, 0, 0) * maxVelocity;
@@ -47,10 +48,11 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.DownArrow))
                 playerRb.velocity = playerRb.velocity + new Vector3(0, 0, -1) * maxVelocity;
             _camera.transform.position = transform.position + offset;
+			
         }
-
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
+			if (!startMenu.gameObject.activeSelf && !gameOverMenu.gameObject.activeSelf)
 				pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
 		}
         if (playerRb.velocity.sqrMagnitude > sqrMaxVelocity)

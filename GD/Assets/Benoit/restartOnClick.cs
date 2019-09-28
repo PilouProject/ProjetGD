@@ -6,6 +6,8 @@ public class restartOnClick : MonoBehaviour
 {
 	public GameObject foodContainer;
 	public GameObject player;
+	public Canvas gameOverMenu;
+	public Canvas pauseMenu;
 	public int repartitionSize;
 	
     // Start is called before the first frame update
@@ -20,6 +22,8 @@ public class restartOnClick : MonoBehaviour
 			float z = Random.Range(-repartitionSize, repartitionSize);
 			Vector3 pos = new Vector3(x, 1, z);
 			foodElement.gameObject.transform.position = pos;
+			pauseMenu.gameObject.SetActive(false);
+			gameOverMenu.gameObject.SetActive(false);
 		}
 	}
 }

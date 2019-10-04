@@ -27,4 +27,10 @@ public class randomPosition : MonoBehaviour
 			transform.position = pos;
 		}
 	}
+
+    public void RandomDisabled()
+    {
+        if (Random.Range(0, 100) < 35)
+            this.gameObject.SetActive(false);
+    }
 }

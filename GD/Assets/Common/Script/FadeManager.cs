@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour
 {
+    public GameObject _hud;
     public Image _fadeImage;
     public bool _isInTransition;
     public float _transition;
@@ -15,14 +16,16 @@ public class FadeManager : MonoBehaviour
     public GameObject _player;
     public GameObject _light;
     private bool _trigger;
-
+    private GameObject[] objs;
     // créer fonction setup variables
+
 
     private void Start()
     {
         _launchTimer = false;
         _durationEnd = 2.5f;
-    }
+        objs = GameObject.FindGameObjectsWithTag("Food");
+}
 
     public void Fade(bool _showing, float _duration)
     {
@@ -38,6 +41,7 @@ public class FadeManager : MonoBehaviour
 
         if (_player.GetComponent<Player>()._triggerHouse == true)
         {
+            _hud.SetActive(false);
             _player.GetComponent<Player>()._triggerHouse = false;
             // add can't move
             _launchTimer = true;
@@ -54,6 +58,8 @@ public class FadeManager : MonoBehaviour
             _launchTimer = false;
             _durationEnd = 2.5f;
             _light.GetComponent<dayNight>().resetLvl();
+            foreach (GameObject food in objs)
+                food.GetComponent<randomPosition>().RandomDisabled();
         }
 
         if (!_isInTransition)
@@ -67,7 +73,11 @@ public class FadeManager : MonoBehaviour
         _fadeImage.color = Color.Lerp(new Color(1, 1, 1, 0), Color.black, _transition);
 
         if (_transition > 1 || _transition < 0)
+        {
             _isInTransition = false;
+            if (_transition < 0)
+                _hud.SetActive(true);
+        }
         //if < 0 reset variable call function Random check for object bouffe
     }
 }

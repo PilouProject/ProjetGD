@@ -20,6 +20,7 @@ public class dayNight : MonoBehaviour
 	public Canvas gameOverCanvas;
 	public Canvas pauseMenu;
 	public Canvas HUDCanvas;
+    public Animator animPlayer;
 	
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,8 @@ public class dayNight : MonoBehaviour
 					{
 						gameOverCanvas.gameObject.SetActive(true);
 						HUDCanvas.gameObject.SetActive(false);
-					}
+                        animPlayer.SetTrigger("IsDead");
+                    }
 				}
 			}
 		}

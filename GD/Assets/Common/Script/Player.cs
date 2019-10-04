@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 	public bool _triggerHouse;
     private Vector3 offset;
     private float sqrMaxVelocity;
+    public Animator animController;
+
+    private Vector3 angle = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -37,16 +40,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        bool isMoving = false;
+
         if (!startMenu.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf && !gameOverMenu.gameObject.activeSelf)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
-                playerRb.velocity = playerRb.velocity + new Vector3(1, 0, 0) * maxVelocity;
-            if (Input.GetKey(KeyCode.LeftArrow))
-                playerRb.velocity = playerRb.velocity + new Vector3(-1, 0, 0) * maxVelocity;
-            if (Input.GetKey(KeyCode.UpArrow))
-                playerRb.velocity = playerRb.velocity + new Vector3(0, 0, 1) * maxVelocity;
-            if (Input.GetKey(KeyCode.DownArrow))
-                playerRb.velocity = playerRb.velocity + new Vector3(0, 0, -1) * maxVelocity;
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            transform.position += movement.normalized * maxVelocity * Time.fixedDeltaTime;
+            isMoving = !(movement == Vector3.zero);
+            if (isMoving)
+                transform.eulerAngles = angle = new Vector3(0, Mathf.Atan2(movement.x, movement.z), 0) * Mathf.Rad2Deg;
+            else
+                transform.eulerAngles = angle;
+           
             _camera.transform.position = transform.position + offset;
 			
         }
@@ -55,10 +60,7 @@ public class Player : MonoBehaviour
 			if (!startMenu.gameObject.activeSelf && !gameOverMenu.gameObject.activeSelf)
 				pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
 		}
-        if (playerRb.velocity.sqrMagnitude > sqrMaxVelocity)
-        {
-            playerRb.velocity = playerRb.velocity.normalized * maxVelocity;
-        }
+        animController.SetBool("IsMoving", isMoving);
 
     }
 

@@ -1,45 +1,22 @@
 fileFormatVersion: 2
-guid: a2d6a9e470b5a0f409742b6e70a45dff
+guid: 1dfb98d8e98e5c8489ea7b42d4b258e9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: bear
-    100004: Direct01
-    100006: Direct01.Target
-    100008: Plane01
-    100010: Sky01
-    100012: teeth lower
-    100014: teeth upper
+    100002: Carrot1
     400000: //RootNode
-    400002: bear
-    400004: Direct01
-    400006: Direct01.Target
-    400008: Plane01
-    400010: Sky01
-    400012: teeth lower
-    400014: teeth upper
-    2100000: 'Material #0'
-    2100002: No Name
-    2100004: teeths
-    2100006: 'Material #1'
-    2300000: bear
-    2300002: Plane01
-    2300004: teeth lower
-    2300006: teeth upper
-    3300000: bear
-    3300002: Plane01
-    3300004: teeth lower
-    3300006: teeth upper
-    4300000: bear
-    4300002: Plane01
-    4300004: teeth lower
-    4300006: teeth upper
-    9500000: //RootNode
-    10800000: Direct01
-    10800002: Sky01
-    2186277476908879412: ImportLogs
-  externalObjects: {}
+    400002: Carrot1
+    2100000: Carrot1Mat
+    2300000: Carrot1
+    3300000: Carrot1
+    4300000: Carrot1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carrot1Mat
+    second: {fileID: 2100000, guid: fb5f32f2521c45e429a5cc0793b34c3f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -92,7 +69,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -119,7 +96,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

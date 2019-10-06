@@ -10215,6 +10215,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 604372320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &606258446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5596602140984754186, guid: 3d577c17fb02e094a939bfeeaf34a6a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1655540236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &616129450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12725,6 +12731,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &733217894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733217888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf452401a3a24eb49b7269e980b0b4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rayon: 10
+  _dayNight: {fileID: 1703199213}
 --- !u!1001 &741847596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26222,12 +26242,12 @@ PrefabInstance:
     - target: {fileID: 5596602140984754184, guid: 3d577c17fb02e094a939bfeeaf34a6a3,
         type: 3}
       propertyPath: m_MaxValue
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5596602140984754184, guid: 3d577c17fb02e094a939bfeeaf34a6a3,
         type: 3}
       propertyPath: m_Value
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5596602140984754184, guid: 3d577c17fb02e094a939bfeeaf34a6a3,
         type: 3}
@@ -26586,7 +26606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4677745771901032, guid: c737dd230724d61469e1c672cf47ed9e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27211,6 +27231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5beb62387bb27742a7eafcf84239643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sleepSlider: {fileID: 606258446}
   _hud: {fileID: 125140994}
   _fadeImage: {fileID: 585213622}
   _isInTransition: 0
@@ -29776,7 +29797,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1655540236}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 606258446}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}

@@ -48,13 +48,18 @@ public class dayNight : MonoBehaviour
 					decreaseSleep();
 					if (nbDay == sleepSlider.maxValue)
 					{
-						gameOverCanvas.gameObject.SetActive(true);
-						HUDCanvas.gameObject.SetActive(false);
-                        animPlayer.SetTrigger("IsDead");
+                        GameOver();
                     }
 				}
 			}
 		}
+    }
+
+    public void GameOver()
+    {
+        gameOverCanvas.gameObject.SetActive(true);
+        HUDCanvas.gameObject.SetActive(false);
+        animPlayer.SetTrigger("IsDead");
     }
 
     void decreaseSleep()

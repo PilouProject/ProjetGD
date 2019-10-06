@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour
 {
+    public GameObject _sleepSlider;
     public GameObject _hud;
     public Image _fadeImage;
     public bool _isInTransition;
@@ -30,7 +31,8 @@ public class FadeManager : MonoBehaviour
     public void Fade(bool _showing, float _duration)
     {
         _isShowing = _showing;
-        _isInTransition = true;
+        if (_sleepSlider.GetComponent<Slider>().value != 0)
+            _isInTransition = true;
         this._duration = _duration;
         _transition = (_isShowing) ? 0 : 1;
     }
@@ -38,6 +40,8 @@ public class FadeManager : MonoBehaviour
     private void Update()
     {
         //if pas de fatigue call fade(true, 1.25f) et ecran de mort
+        //if (_sleepSlider.GetComponent<Slider>().value == 0)
+        //    Fade(true, 1.25f);
 
         if (_player.GetComponent<Player>()._triggerHouse == true)
         {

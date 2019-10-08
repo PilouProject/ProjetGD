@@ -16,12 +16,13 @@ public class dayNight : MonoBehaviour
     public Slider foodSlider;
     public Light sun;
     public Light moon;
-	public Canvas startMenu;
-	public Canvas gameOverCanvas;
-	public Canvas pauseMenu;
-	public Canvas HUDCanvas;
+    public Canvas startMenu;
+    public Canvas gameOverCanvas;
+    public Canvas pauseMenu;
+    public Canvas HUDCanvas;
     public Animator animPlayer;
-	
+    public BuildingsManager buildingsManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,26 +34,26 @@ public class dayNight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (!startMenu.gameObject.activeSelf && !gameOverCanvas.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf)
+        if (!startMenu.gameObject.activeSelf && !gameOverCanvas.gameObject.activeSelf && !pauseMenu.gameObject.activeSelf)
         {
-			if (Time.time >= time + (1 / speed * 0.2f))
-			{
-				sun.transform.Rotate(new Vector3(0.2f, 0, 0));
+            if (Time.time >= time + (1 / speed * 0.2f))
+            {
+                sun.transform.Rotate(new Vector3(0.2f, 0, 0));
                 moon.transform.Rotate(new Vector3(0.2f, 0, 0));
                 time = Time.time;
-				x += 0.2f;
-				if (x >= 360)
-				{
-					x = 0;
-					nbDay++;
-					decreaseSleep();
-					if (nbDay == sleepSlider.maxValue)
-					{
+                x += 0.2f;
+                if (x >= 360)
+                {
+                    x = 0;
+                    nbDay++;
+                    decreaseSleep();
+                    if (nbDay == sleepSlider.maxValue)
+                    {
                         GameOver();
                     }
-				}
-			}
-		}
+                }
+            }
+        }
     }
 
     public void GameOver()
@@ -75,6 +76,7 @@ public class dayNight : MonoBehaviour
         foodSlider.value = 0;
         nbDay = 0;
         x = 0;
+        buildingsManager.resetBuildingsLevel();
     }
 
     public void needMoreFoodOnSLider(int newValueFood)

@@ -23842,7 +23842,7 @@ Transform:
   - {fileID: 354395610}
   - {fileID: 371335056}
   m_Father: {fileID: 1100192415}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1089862132
 PrefabInstance:
@@ -24072,6 +24072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1100192415}
+  - component: {fileID: 1100192416}
   m_Layer: 0
   m_Name: Buildings
   m_TagString: Untagged
@@ -24091,12 +24092,30 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2031433794}
-  - {fileID: 1683396622}
   - {fileID: 1088059732}
+  - {fileID: 1683396622}
   - {fileID: 1024431106}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100192416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100192414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a7762e3eeaf4e4c9ad96646fd6e0a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildingsTop: {fileID: 2031433794}
+  _buildingsLeft: {fileID: 1088059732}
+  _buildingsRight: {fileID: 1683396622}
+  _buildingsBottom: {fileID: 1024431106}
+  _steps: 20
+  _buildingsLevel: 0
 --- !u!4 &1108307181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400020, guid: 01c6bfd39decf144d8b54fa326e2a660,
@@ -36623,7 +36642,7 @@ Transform:
   - {fileID: 827991081}
   - {fileID: 1754513119}
   m_Father: {fileID: 1100192415}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1685756131
 PrefabInstance:
@@ -37231,6 +37250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sleepSlider: {fileID: 606258446}
   _hud: {fileID: 125140994}
+  _buildingsManager: {fileID: 1100192416}
   _fadeImage: {fileID: 585213622}
   _isInTransition: 0
   _transition: 0
@@ -37391,6 +37411,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 649587839}
   HUDCanvas: {fileID: 125140999}
   animPlayer: {fileID: 733217890}
+  buildingsManager: {fileID: 1100192416}
 --- !u!4 &1706194697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f44c28f4c32dfcd47a37532f228877e5,

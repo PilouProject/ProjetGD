@@ -7,6 +7,7 @@ public class FadeManager : MonoBehaviour
 {
     public GameObject _sleepSlider;
     public GameObject _hud;
+    public BuildingsManager _buildingsManager;
     public Image _fadeImage;
     public bool _isInTransition;
     public float _transition;
@@ -26,7 +27,7 @@ public class FadeManager : MonoBehaviour
         _launchTimer = false;
         _durationEnd = 2.5f;
         objs = GameObject.FindGameObjectsWithTag("Food");
-}
+    }
 
     public void Fade(bool _showing, float _duration)
     {
@@ -52,7 +53,7 @@ public class FadeManager : MonoBehaviour
             Fade(true, 1.25f);
         }
 
-        if (_launchTimer == true)  
+        if (_launchTimer == true)
             _durationEnd -= Time.deltaTime;
 
         if (_durationEnd <= 0.0f)
@@ -62,6 +63,7 @@ public class FadeManager : MonoBehaviour
             _launchTimer = false;
             _durationEnd = 2.5f;
             _light.GetComponent<dayNight>().resetLvl();
+            _buildingsManager.setBuildingsLevel(_buildingsManager._buildingsLevel + 1);
             foreach (GameObject food in objs)
                 food.GetComponent<randomPosition>().RandomDisabled();
         }
@@ -72,7 +74,7 @@ public class FadeManager : MonoBehaviour
         if (_isShowing == true)
             _transition += Time.deltaTime * (1 / _duration);
         else
-           _transition += -Time.deltaTime * (1 / _duration);
+            _transition += -Time.deltaTime * (1 / _duration);
         //_transition += (_isShowing) ? Time.deltaTime * (1 / _duration) : -Time.deltaTime * (1 / _duration);
         _fadeImage.color = Color.Lerp(new Color(1, 1, 1, 0), Color.black, _transition);
 

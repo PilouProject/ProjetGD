@@ -23817,7 +23817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088059732}
   m_Layer: 0
-  m_Name: BuildingsLeft
+  m_Name: BuildingsRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23842,7 +23842,7 @@ Transform:
   - {fileID: 354395610}
   - {fileID: 371335056}
   m_Father: {fileID: 1100192415}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1089862132
 PrefabInstance:
@@ -24092,8 +24092,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2031433794}
-  - {fileID: 1088059732}
   - {fileID: 1683396622}
+  - {fileID: 1088059732}
   - {fileID: 1024431106}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -24111,9 +24111,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buildingsTop: {fileID: 2031433794}
-  _buildingsLeft: {fileID: 1088059732}
-  _buildingsRight: {fileID: 1683396622}
+  _buildingsLeft: {fileID: 1683396622}
+  _buildingsRight: {fileID: 1088059732}
   _buildingsBottom: {fileID: 1024431106}
+  _trashObj: {fileID: 3786656169293691007, guid: f5c6420cec93aa14d9abff291c4a78c6,
+    type: 3}
   _steps: 20
   _buildingsLevel: 0
 --- !u!4 &1108307181 stripped
@@ -36617,7 +36619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1683396622}
   m_Layer: 0
-  m_Name: BuildingsRight
+  m_Name: BuildingsLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36642,7 +36644,7 @@ Transform:
   - {fileID: 827991081}
   - {fileID: 1754513119}
   m_Father: {fileID: 1100192415}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1685756131
 PrefabInstance:

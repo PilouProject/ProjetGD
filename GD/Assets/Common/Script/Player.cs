@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     Rigidbody playerRb = null;
     public Camera _camera;
     public float maxVelocity = 4.0f;
-    public int tireingLevel = 0;
+    public int tireingLevel = 1;
     public int food = 0;
     public Canvas startMenu;
     public Canvas pauseMenu;

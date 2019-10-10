@@ -19,11 +19,13 @@ public class FadeManager : MonoBehaviour
     public GameObject _light;
     private bool _trigger;
     private GameObject[] objs;
+    private int _map;
     // créer fonction setup variables
 
 
     private void Start()
     {
+        _map = 1;
         _launchTimer = false;
         _durationEnd = 2.5f;
         objs = GameObject.FindGameObjectsWithTag("Food");
@@ -81,6 +83,11 @@ public class FadeManager : MonoBehaviour
         if (_transition > 1 || _transition < 0)
         {
             _isInTransition = false;
+            if (_transition > 1)
+            {
+                _map += 1;
+                this.GetComponent<ChangeScene>().ChangeMap(_map);
+            }
             if (_transition < 0)
                 _hud.SetActive(true);
         }

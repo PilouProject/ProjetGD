@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private float sqrMaxVelocity;
     public Animator animController;
     public AudioSource EatAudio;
+    public AudioSource backgroundSound;
     private Vector3 angle = Vector3.zero;
 
     // Start is called before the first frame update
@@ -61,7 +62,10 @@ public class Player : MonoBehaviour
                 pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
         }
         animController.SetBool("IsMoving", isMoving);
-
+        if (!startMenu.gameObject.activeSelf && !gameOverMenu.gameObject.activeSelf && !backgroundSound.isPlaying)
+        {
+            backgroundSound.Play();
+        }
     }
 
     void OnTriggerEnter(Collider other)

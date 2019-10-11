@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class dayNight : MonoBehaviour
 {
     public float timeForOneCycleInS = 60f;
@@ -22,7 +21,8 @@ public class dayNight : MonoBehaviour
     public Canvas HUDCanvas;
     public Animator animPlayer;
     public BuildingsManager buildingsManager;
-
+	public AudioSource DeathAudio;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +58,12 @@ public class dayNight : MonoBehaviour
 
     public void GameOver()
     {
+        animPlayer.SetTrigger("IsDead");
+        
+        DeathAudio.gameObject.SetActive(true);
         gameOverCanvas.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(false);
-        animPlayer.SetTrigger("IsDead");
+        
     }
 
     void decreaseSleep()
@@ -70,6 +73,7 @@ public class dayNight : MonoBehaviour
 
     public void resetLvl()
     {
+        DeathAudio.gameObject.SetActive(false);
         sun.transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.Euler(10f, -95f, 0f));
         moon.transform.SetPositionAndRotation(new Vector3(0, 3, 0), Quaternion.Euler(190f, -95f, 0f));
         sleepSlider.value = sleepSlider.maxValue;

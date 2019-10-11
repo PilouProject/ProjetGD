@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private Vector3 offset;
     private float sqrMaxVelocity;
     public Animator animController;
-
+    public AudioSource EatAudio;
     private Vector3 angle = Vector3.zero;
 
     // Start is called before the first frame update
@@ -68,6 +68,8 @@ public class Player : MonoBehaviour
     {
         if (_foodSlider.maxValue > _foodSlider.value && (other.gameObject.CompareTag("Food") || other.gameObject.CompareTag("Trash")))
         {
+            EatAudio.Stop();
+            EatAudio.Play();
             other.gameObject.SetActive(false);
             _foodSlider.value++;
         }

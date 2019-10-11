@@ -21,7 +21,7 @@ public class DangerZone : MonoBehaviour
     public int _rayon;
     public dayNight _dayNight;
 
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +68,7 @@ public class DangerZone : MonoBehaviour
                     _color.saturation.value = _tmpSaturation;
                 }
             }
-            
+
         }
         else
         {

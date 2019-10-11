@@ -21,8 +21,8 @@ public class dayNight : MonoBehaviour
     public Canvas HUDCanvas;
     public Animator animPlayer;
     public BuildingsManager buildingsManager;
-	public AudioSource DeathAudio;
-    
+    public AudioSource DeathAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,11 +59,11 @@ public class dayNight : MonoBehaviour
     public void GameOver()
     {
         animPlayer.SetTrigger("IsDead");
-        
+
         DeathAudio.gameObject.SetActive(true);
         gameOverCanvas.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(false);
-        
+
     }
 
     void decreaseSleep()
@@ -80,7 +80,6 @@ public class dayNight : MonoBehaviour
         foodSlider.value = 0;
         nbDay = 0;
         x = 0;
-        buildingsManager.resetBuildingsLevel();
     }
 
     public void needMoreFoodOnSLider(int newValueFood)

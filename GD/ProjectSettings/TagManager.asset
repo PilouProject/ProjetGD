@@ -11,6 +11,9 @@ TagManager:
   - Food
   - Tree
   - Trash
+  - City
+  - Trunk
+  - Fleur
   layers:
   - Default
   - TransparentFX

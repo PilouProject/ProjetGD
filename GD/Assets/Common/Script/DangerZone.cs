@@ -11,7 +11,7 @@ public class DangerZone : MonoBehaviour
     float _duration;
     float _duration2;
     int _chanceToDie;
-    int _pourcentageToDie;
+    public int _pourcentageToDie;
     float _tmpSaturation;
     ColorGrading _color;
     PostProcessVolume _postProcess;

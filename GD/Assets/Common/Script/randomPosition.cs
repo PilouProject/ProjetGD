@@ -30,7 +30,7 @@ public class randomPosition : MonoBehaviour
 
     public void RandomDisabled()
     {
-        if (Random.Range(0, 100) < 35)
+        if (Random.Range(0, 100) < 20)
             this.gameObject.SetActive(false);
     }
 }

@@ -65,7 +65,7 @@ public class FadeManager : MonoBehaviour
             _launchTimer = false;
             _durationEnd = 2.5f;
             _light.GetComponent<dayNight>().resetLvl();
-            _buildingsManager.setBuildingsLevel(_buildingsManager._buildingsLevel + 1);
+            //_buildingsManager.setBuildingsLevel(_buildingsManager._buildingsLevel + 1);
             foreach (GameObject food in objs)
                 food.GetComponent<randomPosition>().RandomDisabled();
         }

@@ -64,7 +64,7 @@ public class DangerZone : MonoBehaviour
                 _duration2 = 0.5f;
                 if (_tmpSaturation > -50)
                 {
-                    _tmpSaturation -= 1;
+                    _tmpSaturation -= 2;
                     _color.saturation.value = _tmpSaturation;
                 }
             }
@@ -79,7 +79,7 @@ public class DangerZone : MonoBehaviour
                 _duration2 = 0.5f;
                 if (_tmpSaturation < 10)
                 {
-                    _tmpSaturation += 1;
+                    _tmpSaturation += 2;
                     _color.saturation.value = _tmpSaturation;
                 }
             }
